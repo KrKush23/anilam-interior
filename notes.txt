@@ -1,0 +1,7 @@
+📁 Project steps                            │
+│                                              │
+│    1: pnpm run dev --open                    │
+│                                              │
+│  To close the dev server, hit Ctrl-C         │
+│                                              │
+│  Stuck? Visit us at https://svelte.dev/chat
