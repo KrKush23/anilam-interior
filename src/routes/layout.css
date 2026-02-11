@@ -2,11 +2,10 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
-
 @theme {
-  --color-primary: #0B1F33;
-  --color-accent: #1FB6A6;
-  --color-muted: #F5F7FA;
+	--color-primary: #0b1f33;
+	--color-accent: #1fb6a6;
+	--color-muted: #f5f7fa;
 
-  --font-sans: Inter, system-ui, sans-serif;
+	--font-sans: Inter, system-ui, sans-serif;
 }
