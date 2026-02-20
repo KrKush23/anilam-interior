@@ -13,10 +13,10 @@
 	}
 
 	const stats = [
-		{ number: '15+', label: 'Years Experience', icon: Award },
-		{ number: '500+', label: 'Projects Completed', icon: Sparkles },
-		{ number: '50+', label: 'Team Members', icon: Users },
-		{ number: '98%', label: 'Client Satisfaction', icon: Target }
+		{ number: '2025', label: 'Founded', icon: Award },
+		{ number: '5+', label: 'Projects Completed', icon: Sparkles },
+		{ number: 'Dedicated', label: 'Team', icon: Users },
+		{ number: '100%', label: 'Commitment', icon: Target }
 	];
 
 	const values = [
@@ -36,9 +36,9 @@
 			<!-- Background placeholder for image -->
 			<div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950"></div>
 			<!-- IMAGE PLACEHOLDER: Office/Team photo background - 1920x600px -->
-			<div class="absolute inset-0 flex items-center justify-center opacity-20">
+			<!-- <div class="absolute inset-0 flex items-center justify-center opacity-20">
 				<span class="text-2xl text-white/50">[Background Image: Team/Office - 1920x600px]</span>
-			</div>
+			</div> -->
 
 			<div class="relative mx-auto max-w-7xl px-6">
 				<div class="max-w-3xl" use:inView onenterView={() => handleEnter(0)}>
@@ -55,9 +55,9 @@
 							</h1>
 
 							<p class="text-xl leading-relaxed text-slate-300">
-								Since 2010, Anilam has been at the forefront of interior design innovation,
-								transforming thousands of spaces into extraordinary environments that inspire and
-								delight.
+								Anilam is a fresh interior design studio founded in 2025 with a passion for
+								transforming spaces into extraordinary environments that inspire and
+								delight. We're just getting started, and we're excited to create something beautiful with you.
 							</p>
 						</div>
 					{/if}
@@ -117,19 +117,18 @@
 								Our Story
 							</span>
 
-							<h2 class="mb-6 text-4xl font-bold text-slate-900">A Legacy of Design Excellence</h2>
+							<h2 class="mb-6 text-4xl font-bold text-slate-900">A New Vision for Design</h2>
 
 							<div class="space-y-4 leading-relaxed text-slate-600">
 								<p>
-									Founded in 2010, Anilam began with a simple mission: to transform ordinary spaces
-									into extraordinary experiences. What started as a small studio in Mumbai has grown
-									into one of India's premier interior design firms.
+									Founded in 2025, Anilam is a new interior design studio with a simple mission:
+									to transform ordinary spaces into extraordinary experiences. Based in Mumbai,
+									we're ready to bring fresh ideas and modern design to homes and businesses.
 								</p>
 								<p>
-									Our team of 50+ designers, architects, and project managers brings together
-									diverse expertise and a shared passion for creating spaces that inspire. From
-									residential havens to commercial landmarks, we've completed over 500 projects
-									across the country.
+									Our team brings together expertise in interior design, architecture, and project
+									management with a shared passion for creating spaces that inspire. We're excited to
+									work on residential havens and commercial spaces that make a difference.
 								</p>
 								<p>
 									We believe that great design is about more than aesthetics—it's about
@@ -186,29 +185,51 @@
 							<span
 								class="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold text-accent"
 							>
-								Our Team
+								What We Do
 							</span>
-							<h2 class="mb-4 text-4xl font-bold">Meet the Experts</h2>
+							<h2 class="mb-4 text-4xl font-bold">Meet the Team</h2>
 							<p class="text-lg text-slate-300">
-								Our talented team of designers and architects bring creativity and expertise to
+								We're a passionate team of designers and architects ready to bring creativity and expertise to
 								every project.
 							</p>
 						</div>
 
-						<!-- Team grid with placeholders -->
-						<div class="grid gap-8 md:grid-cols-3">
-							{#each [1, 2, 3] as i}
-								<div class="text-center">
-									<!-- IMAGE PLACEHOLDER: Team member photo - 400x400px -->
-									<div
-										class="mx-auto mb-4 flex h-48 w-48 items-center justify-center rounded-full bg-gradient-to-br from-slate-700 to-slate-800"
-									>
-										<span class="text-sm text-slate-500">[Photo {i} - 400x400px]</span>
+						<!-- Team description (no individual names shown) -->
+						<div class="mx-auto max-w-3xl text-center">
+							<p class="mb-8 text-slate-300">
+								The Anilam team brings together expertise in interior design, space planning,
+								and project management. With a focus on modern aesthetics and client collaboration,
+								we're here to help you create spaces that reflect your vision and lifestyle.
+							</p>
+							<div class="grid gap-6 md:grid-cols-3">
+								<div class="rounded-xl bg-white/5 p-6">
+									<div class="mb-3 text-accent">
+										<svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+										</svg>
 									</div>
-									<h3 class="mb-1 text-xl font-semibold">Team Member {i}</h3>
-									<p class="text-slate-400">Position Title</p>
+									<h3 class="mb-2 font-semibold">Design</h3>
+									<p class="text-sm text-slate-400">Creative interior solutions tailored to your space</p>
 								</div>
-							{/each}
+								<div class="rounded-xl bg-white/5 p-6">
+									<div class="mb-3 text-accent">
+										<svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+										</svg>
+									</div>
+									<h3 class="mb-2 font-semibold">Planning</h3>
+									<p class="text-sm text-slate-400">Strategic space planning and 3D visualization</p>
+								</div>
+								<div class="rounded-xl bg-white/5 p-6">
+									<div class="mb-3 text-accent">
+										<svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+										</svg>
+									</div>
+									<h3 class="mb-2 font-semibold">Execution</h3>
+									<p class="text-sm text-slate-400">End-to-end project management and delivery</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				{/if}

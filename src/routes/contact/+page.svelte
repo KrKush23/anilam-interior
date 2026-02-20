@@ -15,15 +15,78 @@
 
 	let isVisible = $state(false);
 	let formSubmitted = $state(false);
+	let isSubmitting = $state(false);
+	let formError = $state('');
+
+	let formData = $state({
+		firstName: '',
+		lastName: '',
+		email: '',
+		phone: '',
+		projectType: '',
+		message: ''
+	});
 
 	function handleEnter() {
 		isVisible = true;
 	}
 
-	function handleSubmit(e: Event) {
+	async function handleSubmit(e: Event) {
 		e.preventDefault();
-		formSubmitted = true;
-		setTimeout(() => (formSubmitted = false), 3000);
+		isSubmitting = true;
+		formError = '';
+
+		try {
+			// Option 1: Use Formspree (Free - 50 submissions/month)
+			// Sign up at https://formspree.io, create a form, and replace 'YOUR_FORM_ID'
+			// const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+
+			// Option 2: Use Discord Webhook (Free - Unlimited)
+			// Create a webhook in your Discord server and replace the URL below
+			const webhookUrl = import.meta.env.VITE_DISCORD_WEBHOOK_URL || '';
+
+			if (webhookUrl) {
+				const discordMessage = {
+					embeds: [{
+						title: '📨 New Contact Form Submission',
+						color: 0xFF6B6B,
+						fields: [
+							{ name: 'Name', value: `${formData.firstName} ${formData.lastName}`, inline: true },
+							{ name: 'Email', value: formData.email, inline: true },
+							{ name: 'Phone', value: formData.phone || 'Not provided', inline: true },
+							{ name: 'Project Type', value: formData.projectType, inline: true },
+							{ name: 'Message', value: formData.message }
+						],
+						timestamp: new Date().toISOString()
+					}]
+				};
+
+				const response = await fetch(webhookUrl, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(discordMessage)
+				});
+
+				if (response.ok) {
+					formSubmitted = true;
+					formData = { firstName: '', lastName: '', email: '', phone: '', projectType: '', message: '' };
+					setTimeout(() => (formSubmitted = false), 5000);
+				} else {
+					formError = 'Failed to send message. Please try again.';
+				}
+			} else {
+				// Fallback: Log to console (for development)
+				console.log('Form submission:', formData);
+				formSubmitted = true;
+				formData = { firstName: '', lastName: '', email: '', phone: '', projectType: '', message: '' };
+				setTimeout(() => (formSubmitted = false), 5000);
+			}
+		} catch (error) {
+			console.error('Form error:', error);
+			formError = 'Network error. Please check your connection and try again.';
+		} finally {
+			isSubmitting = false;
+		}
 	}
 
 	const contactInfo = [
@@ -99,13 +162,13 @@
 						</div>
 
 						<!-- Map section (placeholder) -->
-						<div
+						<!-- <div
 							class="mt-10 flex aspect-video flex-col items-center justify-center gap-3 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 p-6 text-center"
 						>
 							<MapPin class="h-10 w-10 text-accent/60" />
 							<p class="font-medium text-slate-600">Interactive Map Coming Soon</p>
-							<p class="text-sm text-slate-500">Visit us at our Mumbai studio</p>
-						</div>
+							<p class="text-sm text-slate-500">Visit us at our New Delhi studio</p>
+						</div> -->
 					</div>
 
 					<!-- Contact Form -->
@@ -125,19 +188,36 @@
 							</div>
 						{:else}
 							<form class="space-y-6" onsubmit={handleSubmit}>
+								{#if formError}
+									<div class="rounded-xl bg-red-50 p-4 text-red-700">
+										{formError}
+									</div>
+								{/if}
 								<div class="grid gap-6 md:grid-cols-2">
 									<div>
-										<label class="mb-2 block text-sm font-medium text-slate-700">First Name</label>
+										<label class="mb-2 block text-sm font-medium text-slate-700" for="firstName">
+											First Name
+										</label>
 										<input
+											id="firstName"
+											name="firstName"
 											type="text"
+											bind:value={formData.firstName}
+											required
 											class="w-full rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
 											placeholder="John"
 										/>
 									</div>
 									<div>
-										<label class="mb-2 block text-sm font-medium text-slate-700">Last Name</label>
+										<label class="mb-2 block text-sm font-medium text-slate-700" for="lastName">
+											Last Name
+										</label>
 										<input
+											id="lastName"
+											name="lastName"
 											type="text"
+											bind:value={formData.lastName}
+											required
 											class="w-full rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
 											placeholder="Doe"
 										/>
@@ -145,40 +225,57 @@
 								</div>
 
 								<div>
-									<label class="mb-2 block text-sm font-medium text-slate-700">Email</label>
+									<label class="mb-2 block text-sm font-medium text-slate-700" for="email">Email</label>
 									<input
+										id="email"
+										name="email"
 										type="email"
+										bind:value={formData.email}
+										required
 										class="w-full rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
 										placeholder="john@example.com"
 									/>
 								</div>
 
 								<div>
-									<label class="mb-2 block text-sm font-medium text-slate-700">Phone</label>
+									<label class="mb-2 block text-sm font-medium text-slate-700" for="phone">Phone</label>
 									<input
+										id="phone"
+										name="phone"
 										type="tel"
+										bind:value={formData.phone}
 										class="w-full rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
 										placeholder="+91 12345 67890"
 									/>
 								</div>
 
 								<div>
-									<label class="mb-2 block text-sm font-medium text-slate-700">Project Type</label>
+									<label class="mb-2 block text-sm font-medium text-slate-700" for="projectType">
+										Project Type
+									</label>
 									<select
+										id="projectType"
+										name="projectType"
+										bind:value={formData.projectType}
+										required
 										class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 transition-all outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
 									>
-										<option>Select a service</option>
-										<option>Residential Design</option>
-										<option>Commercial Design</option>
-										<option>Consultation</option>
-										<option>Other</option>
+										<option value="">Select a service</option>
+										<option value="Residential Design">Residential Design</option>
+										<option value="Commercial Design">Commercial Design</option>
+										<option value="Consultation">Consultation</option>
+										<option value="Other">Other</option>
 									</select>
 								</div>
 
 								<div>
-									<label class="mb-2 block text-sm font-medium text-slate-700">Message</label>
+									<label class="mb-2 block text-sm font-medium text-slate-700" for="message">Message</label>
 									<textarea
+										id="message"
+										name="message"
 										rows={4}
+										bind:value={formData.message}
+										required
 										class="w-full resize-none rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
 										placeholder="Tell us about your project..."
 									></textarea>
@@ -186,10 +283,16 @@
 
 								<button
 									type="submit"
-									class="flex w-full items-center justify-center gap-2 rounded-xl bg-accent py-4 font-semibold text-white transition-colors hover:bg-accent/90"
+									disabled={isSubmitting}
+									class="flex w-full items-center justify-center gap-2 rounded-xl bg-accent py-4 font-semibold text-white transition-colors hover:bg-accent/90 disabled:cursor-not-allowed disabled:opacity-70"
 								>
-									<Send class="h-5 w-5" />
-									Send Message
+									{#if isSubmitting}
+										<span class="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></span>
+										Sending...
+									{:else}
+										<Send class="h-5 w-5" />
+										Send Message
+									{/if}
 								</button>
 							</form>
 						{/if}

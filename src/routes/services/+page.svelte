@@ -4,86 +4,13 @@
 	import CTASection from '$lib/components/CTASection.svelte';
 	import { inView } from '$lib/actions/useInView';
 	import { fly } from 'svelte/transition';
-	import {
-		Home,
-		Building2,
-		ClipboardList,
-		Palette,
-		Ruler,
-		Lightbulb,
-		Sofa,
-		TreePine
-	} from 'lucide-svelte';
-	import residentialImage from '$lib/assets/images/spacejoy-9M66C_w_ToM-unsplash.jpg';
+	import { mainServices, additionalServices, process } from '$lib/constants/services';
 
 	let visibleSections = $state<boolean[]>([false, false, false]);
 
 	function handleEnter(index: number) {
 		visibleSections[index] = true;
 	}
-
-	const mainServices = [
-		{
-			icon: Home,
-			title: 'Residential Design',
-			description:
-				'Transform your house into a dream home with our comprehensive residential design services.',
-			features: ['Interior Design', 'Space Planning', 'Custom Furniture', 'Color Consultation'],
-			imagePlaceholder: 'Residential Project - 600x400px'
-		},
-		{
-			icon: Building2,
-			title: 'Commercial Design',
-			description:
-				'Create inspiring workspaces that boost productivity and reflect your brand identity.',
-			features: ['Office Design', 'Retail Spaces', 'Hospitality', 'Co-working Spaces'],
-			imagePlaceholder: 'Commercial Project - 600x400px'
-		},
-		{
-			icon: ClipboardList,
-			title: 'Consultation & Planning',
-			description:
-				'Expert guidance through every phase of your project from concept to completion.',
-			features: [
-				'Project Planning',
-				'3D Visualization',
-				'Budget Management',
-				'Timeline Coordination'
-			],
-			imagePlaceholder: 'Planning Session - 600x400px'
-		}
-	];
-
-	const additionalServices = [
-		{
-			icon: Palette,
-			title: 'Color Consultation',
-			description: 'Expert color schemes for your space'
-		},
-		{ icon: Ruler, title: 'Space Planning', description: 'Optimize layout and functionality' },
-		{ icon: Lightbulb, title: 'Lighting Design', description: 'Create the perfect ambiance' },
-		{ icon: Sofa, title: 'Furniture Selection', description: 'Curated pieces for your style' },
-		{ icon: TreePine, title: 'Landscape Design', description: 'Beautiful outdoor spaces' }
-	];
-
-	const process = [
-		{
-			step: '01',
-			title: 'Discovery',
-			description: 'We learn about your vision, needs, and lifestyle'
-		},
-		{ step: '02', title: 'Concept', description: 'We create initial designs and mood boards' },
-		{
-			step: '03',
-			title: 'Design',
-			description: 'Detailed plans, 3D renders, and material selection'
-		},
-		{
-			step: '04',
-			title: 'Execution',
-			description: 'Professional implementation and project management'
-		}
-	];
 </script>
 
 <div class="flex min-h-screen flex-col">
@@ -94,9 +21,9 @@
 		<section class="relative overflow-hidden bg-slate-900 py-24 text-white lg:py-32">
 			<!-- VIDEO PLACEHOLDER: Background video of design process or showroom - 1920x800px -->
 			<div class="absolute inset-0 bg-linear-to-br from-slate-800 to-slate-950"></div>
-			<div class="absolute inset-0 flex items-center justify-center opacity-20">
+			<!-- <div class="absolute inset-0 flex items-center justify-center opacity-20">
 				<span class="text-2xl text-white/50">[Video: Design Process/Showroom - 1920x800px]</span>
-			</div>
+			</div> -->
 
 			<div class="relative mx-auto max-w-7xl px-6" use:inView onenterView={() => handleEnter(0)}>
 				{#if visibleSections[0]}
@@ -131,19 +58,11 @@
 							>
 								<!-- Image -->
 								<div class="relative {i % 2 === 1 ? 'lg:order-2' : ''}">
-									{#if i === 0}
-										<img
-											src={residentialImage}
-											alt="Modern residential interior with stylish furniture and decor"
-											class="aspect-3/2 rounded-2xl object-cover shadow-lg"
-										/>
-									{:else}
-										<div
-											class="flex aspect-3/2 items-center justify-center rounded-2xl bg-linear-to-br from-slate-100 to-slate-200"
-										>
-											<span class="font-medium text-slate-500">[{service.imagePlaceholder}]</span>
-										</div>
-									{/if}
+									<img
+										src={service.image}
+										alt={service.imageAlt}
+										class="aspect-3/2 rounded-2xl object-cover shadow-lg"
+									/>
 								</div>
 
 								<div class={i % 2 === 1 ? 'lg:order-1' : ''}>
@@ -215,17 +134,17 @@
 					</p>
 				</div>
 
-				<!-- VIDEO PLACEHOLDER: Process video showing transformation - 1200x500px -->
-				<div
+				<!-- TODO: VIDEO PLACEHOLDER: Process video showing transformation - 1200x500px -->
+				<!-- <div
 					class="mb-16 flex aspect-video items-center justify-center rounded-2xl bg-linear-to-br from-slate-800 to-slate-700"
 				>
 					<span class="text-lg text-white/50"
 						>[Video: Design Process/Transformation - 1200x500px]</span
 					>
-				</div>
+				</div> -->
 
 				<div class="grid gap-8 md:grid-cols-4">
-					{#each process as step(step)}
+					{#each process as step (step)}
 						<div class="relative">
 							<div class="mb-4 text-5xl font-bold text-accent/20">{step.step}</div>
 							<h3 class="mb-2 text-xl font-bold">{step.title}</h3>

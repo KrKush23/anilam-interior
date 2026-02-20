@@ -9,21 +9,21 @@ export const siteConfig = {
 	// Contact Information
 	contact: {
 		phone: {
-			display: '+91 98765 43210',
-			href: 'tel:+919876543210'
+			display: '+91 99346 60870',
+			href: 'tel:+919934660870'
 		},
 		email: {
-			display: 'info@anilam.in',
-			href: 'mailto:info@anilam.in'
+			display: 'anilamofficial@gmail.com',
+			href: 'mailto:anilamofficial@gmail.com'
 		},
 		address: {
-			street: '42, Landmark Plaza',
-			area: 'Andheri West',
-			city: 'Mumbai',
-			state: 'Maharashtra',
-			pincode: '400053',
+			// street: '42, Landmark Plaza',
+			// area: 'Andheri West',
+			// city: 'Mumbai',
+			state: 'New Delhi',
+			// pincode: '400053',
 			country: 'India',
-			full: '42, Landmark Plaza, Andheri West, Mumbai, Maharashtra 400053, India'
+			full: 'New Delhi, India'
 		},
 		hours: {
 			weekdays: 'Mon - Sat: 10AM - 7PM',
@@ -34,29 +34,25 @@ export const siteConfig = {
 	// Social Media Links
 	social: {
 		instagram: {
-			url: 'https://instagram.com/anilam.interiors',
+			url: 'https://www.instagram.com/anilam_interior?igsh=MWh5bWYydW5tYmN5aQ==',
 			handle: '@anilam.interiors'
 		},
 		facebook: {
-			url: 'https://facebook.com/anilaminteriors',
+			url: 'https://www.facebook.com/share/1CK7PRDqwW/',
 			handle: 'Anilam Interiors'
 		},
 		linkedin: {
-			url: 'https://linkedin.com/company/anilam-interiors',
+			url: 'https://www.linkedin.com/company/anilam/',
 			handle: 'Anilam Interiors'
-		},
-		twitter: {
-			url: 'https://twitter.com/anilaminteriors',
-			handle: '@anilaminteriors'
 		}
 	},
 
 	// Business Info
 	business: {
-		founded: 2015,
-		employees: '15+',
-		projectsCompleted: '500+',
-		yearsExperience: 9
+		founded: 2025,
+		employees: '1-5',
+		projectsCompleted: '5+',
+		yearsExperience: 0
 	},
 
 	// SEO Defaults
@@ -85,4 +81,3 @@ export const HOURS_WEEKDAYS = siteConfig.contact.hours.weekdays;
 export const INSTAGRAM_URL = siteConfig.social.instagram.url;
 export const FACEBOOK_URL = siteConfig.social.facebook.url;
 export const LINKEDIN_URL = siteConfig.social.linkedin.url;
-export const TWITTER_URL = siteConfig.social.twitter.url;

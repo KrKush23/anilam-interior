@@ -1,0 +1,18 @@
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d9488"/>
+      <stop offset="100%" style="stop-color:#0f766e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background with rounded corners -->
+  <rect width="180" height="180" rx="40" fill="url(#iconGradient)"/>
+
+  <!-- Inner design element -->
+  <rect x="45" y="45" width="90" height="90" rx="12" fill="#ffffff" opacity="0.15"/>
+  <rect x="60" y="60" width="60" height="60" rx="8" fill="#ffffff" opacity="0.3"/>
+
+  <!-- Letter A -->
+  <text x="90" y="118" text-anchor="middle" font-family="system-ui, sans-serif" font-size="72" font-weight="bold" fill="#ffffff">A</text>
+</svg>

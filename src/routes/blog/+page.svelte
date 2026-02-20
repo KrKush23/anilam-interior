@@ -20,7 +20,7 @@
 		excerpt:
 			"We're a new interior design studio excited to transform spaces. Learn about our philosophy and what drives us to create beautiful environments.",
 		category: 'Company',
-		date: 'Jan 15, 2024',
+		date: 'Jan 15, 2026',
 		readTime: '3 min read',
 		author: 'Anilam Team',
 		imageSize: '1200x600'
@@ -32,7 +32,7 @@
 			excerpt:
 				'An inside look at our journey designing our very first client project - the Modern Minimalist Villa.',
 			category: 'Projects',
-			date: 'Jan 10, 2024',
+			date: 'Oct 10, 2025',
 			readTime: '5 min read',
 			imageSize: '600x400'
 		},
@@ -40,7 +40,7 @@
 			title: 'How to Choose the Perfect Color Palette',
 			excerpt: 'A comprehensive guide to selecting colors that transform your space.',
 			category: 'Guides',
-			date: 'Jan 5, 2024',
+			date: 'Jan 5, 2026',
 			readTime: '4 min read',
 			imageSize: '600x400'
 		}

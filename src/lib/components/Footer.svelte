@@ -3,7 +3,6 @@
 		Instagram,
 		Facebook,
 		Linkedin,
-		Twitter,
 		MapPin,
 		Phone,
 		Mail,
@@ -17,8 +16,7 @@
 		ADDRESS_FULL,
 		INSTAGRAM_URL,
 		FACEBOOK_URL,
-		LINKEDIN_URL,
-		TWITTER_URL
+		LINKEDIN_URL
 	} from '$lib/config/site';
 
 	const quickLinks = [
@@ -40,7 +38,6 @@
 		{ icon: Instagram, href: INSTAGRAM_URL, label: 'Instagram' },
 		{ icon: Facebook, href: FACEBOOK_URL, label: 'Facebook' },
 		{ icon: Linkedin, href: LINKEDIN_URL, label: 'LinkedIn' },
-		{ icon: Twitter, href: TWITTER_URL, label: 'Twitter' }
 	];
 </script>
 
@@ -62,6 +59,7 @@
 						<a
 							href={social.href}
 							aria-label={social.label}
+							target="_blank"
 							class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 transition-colors duration-300 hover:bg-accent"
 						>
 							<social.icon class="h-5 w-5" />
@@ -145,7 +143,7 @@
 		<div
 			class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 md:flex-row"
 		>
-			<p class="text-sm text-slate-500">© 2026 Anilam. All rights reserved.</p>
+			<p class="text-sm text-slate-500">© {new Date().getFullYear()} Anilam. All rights reserved.</p>
 
 			<div class="flex gap-6 text-sm">
 				<a href="/privacy" class="text-slate-500 transition-colors hover:text-accent"
