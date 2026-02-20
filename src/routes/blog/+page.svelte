@@ -87,11 +87,11 @@
 				<div class="group cursor-pointer">
 					<div class="grid items-center gap-8 lg:grid-cols-2">
 						<!-- IMAGE PLACEHOLDER: Featured blog image - 1200x600px -->
-						<div
+						<!-- <div
 							class="flex aspect-[16/9] items-center justify-center rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300"
 						>
 							<span class="text-slate-500">[Image: {featuredPost.imageSize}]</span>
-						</div>
+						</div> -->
 
 						<div>
 							<div class="mb-4 flex items-center gap-3">
@@ -154,11 +154,11 @@
 							class="group cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-lg"
 						>
 							<!-- IMAGE PLACEHOLDER: Blog thumbnail - 600x400px -->
-							<div
+							<!-- <div
 								class="flex aspect-[3/2] items-center justify-center bg-gradient-to-br from-slate-200 to-slate-300"
 							>
 								<span class="text-sm text-slate-500">[Image: {post.imageSize}]</span>
-							</div>
+							</div> -->
 
 							<div class="p-6">
 								<div class="mb-3 flex items-center gap-2">

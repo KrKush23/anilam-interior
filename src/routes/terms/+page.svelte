@@ -106,7 +106,7 @@ The website and its content are provided "as is" without warranties of any kind,
 			id: 'governing',
 			icon: Scale,
 			title: 'Governing Law and Disputes',
-			content: `These Terms of Service are governed by and construed in accordance with the laws of India. Any disputes arising from these terms or our services shall be subject to the exclusive jurisdiction of the courts in Mumbai, Maharashtra.
+			content: `These Terms of Service are governed by and construed in accordance with the laws of India. Any disputes arising from these terms or our services shall be subject to the exclusive jurisdiction of the courts in New Delhi.
 
 Before initiating any legal proceedings, we encourage you to contact us to attempt to resolve any disputes amicably. We are committed to addressing your concerns and finding fair solutions.`
 		}

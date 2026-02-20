@@ -24,7 +24,7 @@
 		{
 			title: 'Cozy Corner Cafe',
 			category: 'commercial',
-			location: 'Mumbai, India',
+			location: 'New Delhi, India',
 			year: '2025',
 			description:
 				'A warm, inviting coffee shop interior that balances modern aesthetics with comfortable, homey touches.',

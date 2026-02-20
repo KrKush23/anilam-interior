@@ -57,12 +57,12 @@ export const siteConfig = {
 
 	// SEO Defaults
 	seo: {
-		title: 'Anilam | Premium Interior Design Studio in Mumbai',
+		title: 'Anilam | Premium Interior Design Studio',
 		description:
-			'Transform your space with Anilam. Mumbai\'s premier interior design studio specializing in residential and commercial spaces. Book a free consultation today.',
+			'Transform your space with Anilam. New Delhi\'s premier interior design studio specializing in residential and commercial spaces. Book a free consultation today.',
 		keywords: [
 			'interior design',
-			'Mumbai interior designer',
+			'New Delhi interior designer',
 			'home renovation',
 			'office design',
 			'residential design',

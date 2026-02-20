@@ -70,7 +70,7 @@
 						href="/contact"
 						class="group flex items-center justify-center gap-2 rounded-full bg-accent px-8 py-4 font-semibold text-white shadow-lg shadow-accent/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent/90 hover:shadow-xl hover:shadow-accent/30"
 					>
-						Be Our First Client
+						Start Your Project
 						<ChevronRight class="h-5 w-5 transition-transform group-hover:translate-x-1" />
 					</a>
 					<a

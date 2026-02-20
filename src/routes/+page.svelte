@@ -8,6 +8,11 @@
 	import CTASection from '$lib/components/CTASection.svelte';
 </script>
 
+<svelte:head>
+	<title>Anilam | Premium Interior Design Studio</title>
+	<meta name="description" content="Transform your space with Anilam. New Delhi's premier interior design studio specializing in residential and commercial spaces. Book a free consultation today." />
+</svelte:head>
+
 <div class="flex min-h-screen flex-col">
 	<Navbar />
 	<main class="flex-1">

@@ -104,10 +104,10 @@
 		<!-- Hero -->
 		<section class="relative overflow-hidden bg-slate-900 py-24 text-white lg:py-32">
 			<!-- IMAGE PLACEHOLDER: Office interior - 1920x600px -->
-			<div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950"></div>
+			<!-- <div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950"></div>
 			<div class="absolute inset-0 flex items-center justify-center opacity-20">
 				<span class="text-2xl text-white/50">[Image: Office Interior - 1920x600px]</span>
-			</div>
+			</div> -->
 
 			<div class="relative mx-auto max-w-7xl px-6 text-center" use:inView onenterView={handleEnter}>
 				{#if isVisible}

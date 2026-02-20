@@ -122,7 +122,7 @@
 							<div class="space-y-4 leading-relaxed text-slate-600">
 								<p>
 									Founded in 2025, Anilam is a new interior design studio with a simple mission:
-									to transform ordinary spaces into extraordinary experiences. Based in Mumbai,
+									to transform ordinary spaces into extraordinary experiences. Based in New Delhi,
 									we're ready to bring fresh ideas and modern design to homes and businesses.
 								</p>
 								<p>
